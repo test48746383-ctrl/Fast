@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#1a1a2e" />
+    <meta name="color-scheme" content="dark" />
+    
+    <!-- SEO Meta Tags -->
+    <title>AI Palm Reader – Tarot & Astrology Guidance</title>
+    <meta name="description" content="Discover your destiny through AI-powered palm reading, tarot cards, daily horoscopes, and personalized spiritual guidance. Free and premium mystical insights." />
+    <meta name="keywords" content="palm reading, tarot, astrology, horoscope, AI, spiritual guidance, fortune telling, zodiac" />
+    <meta name="author" content="AI Palm Reader" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aipalmreader.app/" />
+    <meta property="og:title" content="AI Palm Reader – Tarot & Astrology Guidance" />
+    <meta property="og:description" content="Discover your destiny through AI-powered palm reading, tarot cards, and spiritual guidance." />
+    <meta property="og:image" content="/icons/icon-512x512.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://aipalmreader.app/" />
+    <meta property="twitter:title" content="AI Palm Reader – Tarot & Astrology Guidance" />
+    <meta property="twitter:description" content="Discover your destiny through AI-powered palm reading, tarot cards, and spiritual guidance." />
+    <meta property="twitter:image" content="/icons/icon-512x512.png" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Palm Reader" />
+    <meta name="application-name" content="Palm Reader" />
+    <meta name="msapplication-TileColor" content="#1a1a2e" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#1a1a2e" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://openrouter.ai" />
+    
+    <!-- Google Fonts - Inter & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Prevent FOUC (Flash of Unstyled Content) -->
+    <style>
+      html {
+        background-color: #0f0f1a;
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+        min-height: 100vh;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      #root {
+        min-height: 100vh;
+        min-height: 100dvh;
+      }
+      
+      /* Initial Loader */
+      .initial-loader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+        z-index: 9999;
+      }
+      
+      .initial-loader-content {
+        text-align: center;
+      }
+      
+      .initial-loader-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 16px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 50%;
+        animation: pulse 1.5s ease-in-out infinite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .initial-loader-icon svg {
+        width: 48px;
+        height: 48px;
+        fill: white;
+      }
+      
+      .initial-loader-text {
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.8;
+        }
+      }
+      
+      /* Hide loader when app loads */
+      .app-loaded .initial-loader {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Initial Loader (shown before React mounts) -->
+    <div class="initial-loader" id="initial-loader">
+      <div class="initial-loader-content">
+        <div class="initial-loader-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C8.5 2 5.5 4.5 4.5 8C3.5 11.5 5 15.5 8 17.5V22H10V18C10 17.5 10.5 17 11 17H13C13.5 17 14 17.5 14 18V22H16V17.5C19 15.5 20.5 11.5 19.5 8C18.5 4.5 15.5 2 12 2ZM12 4C14.5 4 16.5 5.5 17.5 8C18.5 10.5 17.5 13.5 15 15C14.5 15.5 14 16 14 16.5V16H10V16.5C10 16 9.5 15.5 9 15C6.5 13.5 5.5 10.5 6.5 8C7.5 5.5 9.5 4 12 4Z"/>
+          </svg>
+        </div>
+        <div class="initial-loader-text">Loading...</div>
+      </div>
+    </div>
+    
+    <!-- React App Root -->
+    <div id="root"></div>
+    
+    <!-- Main Script -->
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Remove loader after app initialization -->
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          document.body.classList.add('app-loaded');
+          setTimeout(function() {
+            var loader = document.getElementById('initial-loader');
+            if (loader) loader.remove();
+          }, 300);
+        }, 100);
+      });
+    </script>
+    
+    <!-- No Script Fallback -->
+    <noscript>
+      <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #0f0f1a; color: white; font-family: sans-serif; text-align: center; padding: 20px;">
+        <div>
+          <h1 style="font-size: 24px; margin-bottom: 16px;">JavaScript Required</h1>
+          <p style="opacity: 0.7;">Please enable JavaScript to use AI Palm Reader app.</p>
+        </div>
+      </div>
+    </noscript>
+  </body>
+  </html>
