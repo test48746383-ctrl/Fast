@@ -2,11 +2,6 @@ import React from 'react';
 
 /**
  * 🌌 Cosmic Background
- * 
- * Creates a deep, mystical layered background with:
- * - Deep gradient base
- * - Radial glows
- * - Subtle animated gradients
  */
 const CosmicBackground = () => {
   return (
@@ -35,8 +30,13 @@ const CosmicBackground = () => {
         style={{ background: 'radial-gradient(circle, rgba(102, 126, 234, 0.4) 0%, transparent 60%)' }}
       />
       
-      {/* Layer 5: Noise Texture (for realism) */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      {/* Layer 5: CSS Noise (No external files) */}
+      <div 
+        className="absolute inset-0 opacity-[0.03]" 
+        style={{
+            backgroundImage: `repeating-radial-gradient(circle at 17% 32%, white, transparent 1px)`
+        }} 
+      />
     </div>
   );
 };
