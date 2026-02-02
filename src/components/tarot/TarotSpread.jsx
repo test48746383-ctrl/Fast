@@ -29,8 +29,16 @@ const TarotSpread = ({ category, onCardsDrawn }) => {
             className="absolute w-32 h-48 bg-cosmic-800 border-2 border-white/20 rounded-xl shadow-2xl origin-bottom overflow-hidden"
             style={{ zIndex: i }}
           >
-             {/* UPDATED: Changed png to svg */}
-             <div className="w-full h-full bg-[url('/assets/tarot-back.svg')] bg-cover opacity-50" />
+             {/* CSS Pattern Background */}
+             <div 
+               className="w-full h-full opacity-60"
+               style={{
+                 backgroundImage: `
+                   radial-gradient(circle at center, #4c2882 0%, #0f0f1a 100%),
+                   repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 2px, transparent 2px, transparent 8px)
+                 `
+               }}
+             />
           </motion.div>
         ))}
       </div>
