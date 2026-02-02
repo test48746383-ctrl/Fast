@@ -15,8 +15,13 @@ const WelcomeHeader = () => {
 
   return (
     <div className="w-full h-[280px] bg-gradient-to-b from-cosmic-800 to-transparent relative pt-safe-top px-6 flex flex-col">
-      {/* Stars/Dust Effect */}
-      <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-10" />
+      {/* FIXED: Removed external noise.svg, using CSS pattern instead */}
+      <div 
+        className="absolute inset-0 opacity-10" 
+        style={{
+          backgroundImage: `repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 10px)`
+        }}
+      />
       
       <div className="flex items-center justify-between mt-6 mb-8 z-10">
         <div>
@@ -28,7 +33,7 @@ const WelcomeHeader = () => {
           </h1>
         </div>
         
-        {/* User Avatar / Profile Link */}
+        {/* User Avatar */}
         <div className="w-12 h-12 rounded-full border-2 border-white/20 p-0.5">
            <div className="w-full h-full rounded-full bg-gradient-to-br from-celestial-400 to-mystic-500 flex items-center justify-center text-lg font-bold">
              {userProfile?.name ? userProfile.name[0] : 'S'}
